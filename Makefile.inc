@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Werror -Wpedantic -Wall
+CXXFLAGS = -std=c++17 -Werror -Wpedantic -Wall
 CXXFLAGS_R = $(CXXFLAGS) -O3 -DNDEBUG
 CXXFLAGS_D = $(CXXFLAGS) -g  -DDEBUG
 GTEST_LIBS = -lgtest -lgtest_main -lpthread
