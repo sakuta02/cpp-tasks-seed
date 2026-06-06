@@ -36,6 +36,22 @@
 *.exe
 *.out
 *.app
+debug
+release
+utest
+base85
 
 # debug information files
 *.dwo
+
+# Generated dependency files
+*.hdrdep.bak
+
+# IDE files
+.idea/
+
+# Local test artifacts
+random.bin
+random.bin.test
+random.b85
+random.b85.test
