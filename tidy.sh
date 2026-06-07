@@ -22,5 +22,6 @@ for f in "${FILES[@]}"; do
     -std=c++17 \
     -Wall \
     -Wpedantic \
-    -I.
+    -I. \
+    ${CXX_EXTRA_FLAGS:-}
 done

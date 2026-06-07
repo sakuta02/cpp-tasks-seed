@@ -1,5 +1,8 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Werror -Wpedantic -Wall
+CXX_EXTRA_FLAGS ?=
+LD_EXTRA_OPT ?=
+TIDY_EXTRA_FLAGS ?=
+CXXFLAGS = -std=c++17 -Werror -Wpedantic -Wall $(CXX_EXTRA_FLAGS)
 CXXFLAGS_R = $(CXXFLAGS) -O3 -DNDEBUG
 CXXFLAGS_D = $(CXXFLAGS) -g  -DDEBUG
 GTEST_LIBS = -lgtest -lgtest_main -lpthread
@@ -25,7 +28,7 @@ astyle:
 	astyle --options=../astyle.ini *.h *.cpp
 
 tidy:
-	../tidy.sh
+	CXX_EXTRA_FLAGS="$(CXX_EXTRA_FLAGS) $(TIDY_EXTRA_FLAGS)" ../tidy.sh
 
 depends :
 	makedepend -f Makefile.hdrdep *.c*
